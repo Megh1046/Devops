@@ -27,5 +27,5 @@ jobs:
         run: npm ci 
 
       - name: Deploy to render
-        if github.ref == 'refs/heads/main':
+        if: github.ref == 'refs/heads/main'
         run: curl -x POST ${{ secrets.RENDER_DEPLOY_HOOK }}  
